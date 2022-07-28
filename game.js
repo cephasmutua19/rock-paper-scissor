@@ -67,10 +67,57 @@ function singlePlay(playerSelection, computerSelection){
         resultStr = `You Lose! ${computerSelection} beats ${playerItem}`
     }else if(playerItem === spriteArr[2] && computerSelection === spriteArr[1]){
         resultStr = `You Win! ${playerItem} beats ${computerSelection}`
+    }else{
+        resultStr = alert("Invalid Entry!!! You have shorten your trials. Next time enter either Rock, Paper or scissor")
     }
 
     return resultStr
     
 }
 
-console.log(singlePlay("scissor", getComputerChoice()))
+// console.log(singlePlay("scissor", getComputerChoice()))
+
+
+//Create a 5 round iteration that displays winner and looser at the end with points
+
+function game(){
+    
+    let result = [];
+    let compScore = 0;
+    let playerScore = 0;
+    for (let i = 0; i < 5; i++) {
+
+        let promptGame = prompt("Enter either Rock, Paper or Scissor", "")
+        result.push(singlePlay(promptGame, getComputerChoice()))
+
+        if(result[i] === undefined){
+            console.error("Invalid Entry!!!");
+            console.log(compScore += 0)
+            console.log(playerScore += 0)
+            //Need to check how to restart here
+
+        }else if(/^You\sLose/.test(result[i])){
+            console.log(result[i])
+            console.log(++compScore)
+            console.log(playerScore += 0)
+        }else if(/^It\'s\sa\s/.test(result[i])){
+            console.log(result[i])
+            console.log(compScore += 0)
+            console.log(playerScore += 0)
+        }else{
+            console.log(result[i])
+            console.log(compScore += 0)
+            console.log(++playerScore)
+        }
+     }
+
+     if(compScore > playerScore){
+        return ` YOU LOST!!! Your score is ${playerScore} - Machine scored ${compScore }`
+     }else if(compScore < playerScore){
+        return ` HURRAY!!! YOU WON!!! Your score is ${playerScore} - Machine scored ${compScore }`
+     }else return ` Oh WOW, ITS A DRAW : You scored ${playerScore} - Machine scored ${compScore }`
+     
+    //  return compScore + " : " + playerScore
+}
+
+console.log(game())
