@@ -69,7 +69,7 @@ function singlePlay(playerSelection, computerSelection){
     }else if(playerItem === spriteArr[2] && computerSelection === spriteArr[1]){
         resultStr = `You Win! ${playerItem} beats ${computerSelection}`
     }else{
-        resultStr = alert("Invalid Entry!!! This will not be counted. Next time enter either Rock, Paper or Scissor")
+        resultStr = alert("Invalid Entry!!!. Next time enter either Rock, Paper or Scissor. RE-START THE GAME!!!")
     }
 
     return resultStr
@@ -92,10 +92,11 @@ function game(){
         result.push(singlePlay(promptGame, getComputerChoice()))
 
         if(result[i] === undefined){
-            console.warn("Invalid Entry!!!");
-            console.log(`Comp - ${compScore += 0}`)
-            console.log(`Me - ${playerScore += 0}`)
-            //Need to check how to restart here
+            console.error("Sorry, Invalid Entry!!!");
+            // console.log(`Comp - ${compScore += 0}`)
+            // console.log(`Me - ${playerScore += 0}`)
+            //Need to restart from here
+            return;
 
         }else if(/^You\sLose/.test(result[i])){
             console.log(result[i])
