@@ -68,7 +68,7 @@ function singlePlay(playerSelection, computerSelection){
     }else if(playerItem === spriteArr[2] && computerSelection === spriteArr[1]){
         resultStr = `You Win! ${playerItem} beats ${computerSelection}`
     }else{
-        resultStr = alert("Invalid Entry!!! You have shorten your trials. Next time enter either Rock, Paper or scissor")
+        resultStr = alert("Invalid Entry!!! This will not be counted. Next time enter either Rock, Paper or Scissor")
     }
 
     return resultStr
@@ -92,22 +92,22 @@ function game(){
 
         if(result[i] === undefined){
             console.error("Invalid Entry!!!");
-            console.log(compScore += 0)
-            console.log(playerScore += 0)
+            console.log(`Comp - ${compScore += 0}`)
+            console.log(`Me - ${playerScore += 0}`)
             //Need to check how to restart here
 
         }else if(/^You\sLose/.test(result[i])){
             console.log(result[i])
-            console.log(++compScore)
-            console.log(playerScore += 0)
+            console.log(`Comp - ${++compScore}`)
+            console.log(`Me - ${playerScore += 0}`)
         }else if(/^It\'s\sa\s/.test(result[i])){
             console.log(result[i])
-            console.log(compScore += 0)
-            console.log(playerScore += 0)
+            console.log(`Comp - ${compScore += 0}`)
+            console.log(`Me - ${playerScore += 0}`)
         }else{
             console.log(result[i])
-            console.log(compScore += 0)
-            console.log(++playerScore)
+            console.log(`Comp - ${compScore += 0}`)
+            console.log(`Me - ${++playerScore}`)
         }
      }
 
