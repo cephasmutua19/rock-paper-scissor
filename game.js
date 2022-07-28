@@ -45,9 +45,10 @@ function singlePlay(playerSelection, computerSelection){
                 }
             })
              
-        } else{
-            playerItem = "Invalid input"
-        }
+        } 
+        // else{
+        //     playerItem = "Invalid input"
+        // }
         
 
     //Check if selections match
@@ -91,7 +92,7 @@ function game(){
         result.push(singlePlay(promptGame, getComputerChoice()))
 
         if(result[i] === undefined){
-            console.error("Invalid Entry!!!");
+            console.warn("Invalid Entry!!!");
             console.log(`Comp - ${compScore += 0}`)
             console.log(`Me - ${playerScore += 0}`)
             //Need to check how to restart here
