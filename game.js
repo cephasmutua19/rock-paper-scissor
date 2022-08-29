@@ -46,9 +46,6 @@ function singlePlay(playerSelection, computerSelection){
             })
              
         } 
-        // else{
-        //     playerItem = "Invalid input"
-        // }
         
 
     //Check if selections match
@@ -69,7 +66,7 @@ function singlePlay(playerSelection, computerSelection){
     }else if(playerItem === spriteArr[2] && computerSelection === spriteArr[1]){
         resultStr = `You Win! ${playerItem} beats ${computerSelection}`
     }else{
-        resultStr = alert("Invalid Entry!!!. Next time enter either Rock, Paper or Scissor. RE-START THE GAME!!!")
+        resultStr = alert("Invalid Entry!!!. GAME OVER! Next time enter either Rock, Paper or Scissor. RE-START THE GAME!!!")
     }
 
     return resultStr
@@ -93,9 +90,6 @@ function game(){
 
         if(result[i] === undefined){
             console.error("Sorry, Invalid Entry!!!");
-            // console.log(`Comp - ${compScore += 0}`)
-            // console.log(`Me - ${playerScore += 0}`)
-            //Need to restart from here
             return;
 
         }else if(/^You\sLose/.test(result[i])){
@@ -119,7 +113,9 @@ function game(){
         return ` HURRAY!!! YOU WON!!! Your score is ${playerScore} - Machine scored ${compScore }`
      }else return ` Oh WOW, ITS A DRAW : You scored ${playerScore} - Machine scored ${compScore }`
      
-    //  return compScore + " : " + playerScore
+    
 }
 
-console.log(game())
+window.addEventListener('dblclick', () => console.log(game()))
+
+
