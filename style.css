@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: #0d323a;
+    /* background: linear-gradient(180deg, #383838, #00ffd5); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header{
+    padding: 1em;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    background-color: #081d22;
+    justify-content: space-evenly;
+    color: aliceblue;
+}
+
+.score-board{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1em 0 0 0;
+    font-size: 3rem;
+    
+}
+
+.score{
+    /* background-color: aliceblue; */
+    text-shadow: 3px 5px 10px rgb(248, 166, 145);
+    color: aliceblue;
+}
+
+.headers{
+    /* display: flex; */
+    /* justify-content: space-evenly;
+     */
+     display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    /* padding: 1em 0; */
+    margin: 1em 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #3282f6;
+    text-shadow: 3px 7px 5px #020b18;
+}
+.vs{
+    text-shadow: 3px 5px 10px rgb(248, 166, 145);
+    color: aliceblue;
+    font-size: 3rem;
+}
+
+.button{
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-items: center;
+    padding: 0 5em;
+}
+
+button{
+    height: 100px;
+    width: 100px;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    margin: 5px;
+    
+}
+
+.rock{
+    background-image: url(./images/rock-hand-2.png);
+}
+
+.paper{
+    background-image: url(./images/paper-hand-2.png);
+}
+
+.scissor{
+    background-image: url(./images/scissor-hand-2.png);
+}
+.comp-button{
+    position: relative;
+    justify-self: center;
+    padding-right: 30%;
+
+}
+.comp-rock{
+    position: absolute;
+}
+.comp-paper{
+    position: absolute;
+}
+.comp-scissor{
+    position: absolute;
+}
+
+button:hover{
+    border-radius: 50px;
+    box-shadow: 0 10px 50px aliceblue, 0 10px 10px aliceblue;
+    transition-duration: 800ms;
+    transition-timing-function: ease-out;
+}
+
+.selected{
+    border-radius: 50px;
+    box-shadow: 0 10px 50px aliceblue, 0 10px 10px aliceblue;
+}
+

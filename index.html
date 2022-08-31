@@ -9,31 +9,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>rock - paper - scissor</h1>
+    <div class="header">
+        <h1 id="headerA">rock</h1>
+        <h1 id="headerB">paper</h1>
+        <h1 id="headerC">scissor</h1>
+    </div>
     <main>
         <section class="score-board">
-            <p id="player-score">0</p>
-            <p id="machine-score=">0</p>
+            <p class="score" id="player-score">0</p>
+            <p class="score" id="machine-score">0</p>
         </section>
         <section class="headers">
-            <h2>You</h2>
-            <h2>Machine</h2>
+            <h2 id="you">You</h2>
+            <h2 id="machine">Machine</h2>
         </section>
         <section class="button">
             <div class="player-button">
-                <button class="rock">rock</button>
-                <button class="paper">paper</button>
-                <button class="scissor">scissor</button>
+                <button class="rock"></button>
+                <button class="paper"></button>
+                <button class="scissor"></button>
             </div>
-            <p>vs</p>
+            <p class="vs">vs</p>
             <div class="comp-button">
-                <button class="rock comp-rock">rock</button>
-                <button class="paper comp-paper">paper</button>
-                <button class="scissor comp-scissor">scissor</button>
+                <button class="rock comp-rock"></button>
+                <button class="paper comp-paper"></button>
+                <button class="scissor comp-scissor"></button>
             </div>
         </section>
     </main>
 
-    <script src="game.js"></script>
+    <script src="game.js" defer></script>
 </body>
 </html>
