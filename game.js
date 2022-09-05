@@ -1,121 +1,88 @@
+//Html elements
+let scoreboard = document.querySelectorAll('.score')
+let playersChoice = document.querySelectorAll('.player-button button')
+let compsChoice = document.querySelector('#mark')
+let playButton = document.querySelector('#play-btn')
+
+let sampleTest = playersChoice[0].getAttribute('class')
+
+console.log(typeof sampleTest)
+
 //Global Sprite Variable
-const spriteArr = ["Rock", "Paper", "Scissor"]
- 
-// Player & Computer choices
+const spriteArr = ["rock", "paper", "scissor"]
 function getComputerChoice(){
     return spriteArr[Math.floor(Math.random() * 3)]
 }
 
-// console.log(getComputerChoice())
+//Player Buttons
+// playersChoice.forEach(targetZoom)
 
-// function getPlayersChoice(item){
-//     let playerItem = "";
-//     let reg = /rock|paper|scissor/i;
+function targetZoom(btn){
+    btn.addEventListener('click', (e) => {
+        e.preventDefault()
+        let targetE = e.target
+        let chosenMove =targetE.getAttribute('class')
+        console.log(targetE.getAttribute('class'))
+        playersChoice.forEach(val => {
+            if(val !== targetE){
+                val.classList.add('hide') 
+            }
+            return targetE.getAttribute('class')
+        })
 
-//     if(reg.test(item)){
-//         spriteArr.forEach(value => {
-//             if(value.toLocaleLowerCase() === item.toLowerCase()){
-//                 playerItem = value
-//             }
-//         })
-         
-//     } else{
-//         playerItem = "Invalid input"
-//     }
-    
-//     return playerItem
-// }
-
-// console.log(getPlayersChoice("PAPER"))
-
-
-
-function singlePlay(playerSelection, computerSelection){
-
-    let resultStr = ""
-
-    
-        let playerItem = "";
-        let reg = /rock|paper|scissor/i;
-    
-        if(reg.test(playerSelection)){
-            spriteArr.forEach(value => {
-                if(value.toLocaleLowerCase() === playerSelection.toLowerCase()){
-                    playerItem = value
-                }
+            setTimeout(() => {
+                playersChoice.forEach(val => {
+                    val.classList.remove('hide')
             })
-             
-        } 
-        
+            }, 1200);
+           
 
-    //Check if selections match
-    if(playerItem === computerSelection){
-        resultStr = "It's a DRAW!!!";
-    }else if(playerItem === spriteArr[0] && computerSelection === spriteArr[1]){
-        resultStr = `You Lose! ${computerSelection} beats ${playerItem}`
-    }
-    else if(playerItem === spriteArr[0] && computerSelection === spriteArr[2]){
-        resultStr = `You Win! ${playerItem} beats ${computerSelection}`
-    }
-    else if(playerItem === spriteArr[1] && computerSelection === spriteArr[0]){
-        resultStr = `You Win! ${playerItem} beats ${computerSelection}`
-    }else if(playerItem === spriteArr[1] && computerSelection === spriteArr[2]){
-        resultStr = `You Lose! ${computerSelection} beats ${playerItem}`
-    }else if(playerItem === spriteArr[2] && computerSelection === spriteArr[0]){
-        resultStr = `You Lose! ${computerSelection} beats ${playerItem}`
-    }else if(playerItem === spriteArr[2] && computerSelection === spriteArr[1]){
-        resultStr = `You Win! ${playerItem} beats ${computerSelection}`
-    }else{
-        resultStr = alert("Invalid Entry!!!. GAME OVER! Next time enter either Rock, Paper or Scissor. RE-START THE GAME!!!")
-    }
+            let mech = getComputerChoice()
+            compsChoice.textContent = ''
+            console.log(mech)
+            compsChoice.className = mech
 
-    return resultStr
-    
+            compsChoice.classList.add('scaled-btn')
+
+                compsChoice.classList.remove('scaled-btn')
+                setTimeout(() => {
+                    compsChoice.classList.remove(mech)
+                }, 1300);
+
+                if(mech === chosenMove){
+                    console.log('Draw')
+                }else if(mech === spriteArr[0] && chosenMove === spriteArr[1]){
+                        console.log('you win')
+                    }else if(mech === spriteArr[0] && chosenMove === spriteArr[2]){
+                            console.log('you loose')
+                        }else if(mech === spriteArr[1] && chosenMove === spriteArr
+                            [0]){
+                                console.log('you loose')
+                            }else if(mech === spriteArr[1] && chosenMove === spriteArr
+                            [2]){
+                                console.log('you win')
+                            }else if(mech === spriteArr[2] && chosenMove === spriteArr
+                                [0]){
+                                    console.log('you win')
+                                }else if(mech === spriteArr[2] && chosenMove === spriteArr
+                                    [1]){
+                                        console.log('you loose')
+                                    }
+
+    })
 }
 
-// console.log(singlePlay("scissor", getComputerChoice()))
 
 
-//Create a 5 round iteration that displays winner and looser at the end with points
-
-function game(){
-    
-    let result = [];
-    let compScore = 0;
-    let playerScore = 0;
-    for (let i = 0; i < 5; i++) {
-
-        let promptGame = prompt("Enter either Rock, Paper or Scissor", "")
-        result.push(singlePlay(promptGame, getComputerChoice()))
-
-        if(result[i] === undefined){
-            console.error("Sorry, Invalid Entry!!!");
-            return;
-
-        }else if(/^You\sLose/.test(result[i])){
-            console.log(result[i])
-            console.log(`Comp - ${++compScore}`)
-            console.log(`Me - ${playerScore += 0}`)
-        }else if(/^It\'s\sa\s/.test(result[i])){
-            console.log(result[i])
-            console.log(`Comp - ${compScore += 0}`)
-            console.log(`Me - ${playerScore += 0}`)
-        }else{
-            console.log(result[i])
-            console.log(`Comp - ${compScore += 0}`)
-            console.log(`Me - ${++playerScore}`)
-        }
-     }
-
-     if(compScore > playerScore){
-        return ` YOU LOST!!! Your score is ${playerScore} - Machine scored ${compScore }`
-     }else if(compScore < playerScore){
-        return ` HURRAY!!! YOU WON!!! Your score is ${playerScore} - Machine scored ${compScore }`
-     }else return ` Oh WOW, ITS A DRAW : You scored ${playerScore} - Machine scored ${compScore }`
+// playersChoice.forEach(targetZoom)
+ 
+// Player & Computer choices
      
-    
-}
-
-window.addEventListener('dblclick', () => console.log(game()))
+playButton.addEventListener('click', (e) => {
+    let targetEl = e.target;
+    targetEl.classList.add('hide')
+    playersChoice.forEach(targetZoom)
+   
+})
 
 
