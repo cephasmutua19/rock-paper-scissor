@@ -6,34 +6,9 @@ function getComputerChoice(){
     return spriteArr[Math.floor(Math.random() * 3)]
 }
 
-// console.log(getComputerChoice())
-
-// function getPlayersChoice(item){
-//     let playerItem = "";
-//     let reg = /rock|paper|scissor/i;
-
-//     if(reg.test(item)){
-//         spriteArr.forEach(value => {
-//             if(value.toLocaleLowerCase() === item.toLowerCase()){
-//                 playerItem = value
-//             }
-//         })
-         
-//     } else{
-//         playerItem = "Invalid input"
-//     }
-    
-//     return playerItem
-// }
-
-// console.log(getPlayersChoice("PAPER"))
-
-
-
 function singlePlay(playerSelection, computerSelection){
 
     let resultStr = ""
-
     
         let playerItem = "";
         let reg = /rock|paper|scissor/i;
@@ -46,11 +21,7 @@ function singlePlay(playerSelection, computerSelection){
             })
              
         } 
-        // else{
-        //     playerItem = "Invalid input"
-        // }
         
-
     //Check if selections match
     if(playerItem === computerSelection){
         resultStr = "It's a DRAW!!!";
@@ -78,7 +49,6 @@ function singlePlay(playerSelection, computerSelection){
 
 // console.log(singlePlay("scissor", getComputerChoice()))
 
-
 //Create a 5 round iteration that displays winner and looser at the end with points
 
 function game(){
@@ -93,11 +63,8 @@ function game(){
 
         if(result[i] === undefined){
             console.error("Sorry, Invalid Entry!!!");
-            // console.log(`Comp - ${compScore += 0}`)
-            // console.log(`Me - ${playerScore += 0}`)
-            //Need to restart from here
+            
             return;
-
         }else if(/^You\sLose/.test(result[i])){
             console.log(result[i])
             console.log(`Comp - ${++compScore}`)
@@ -114,13 +81,13 @@ function game(){
      }
 
      if(compScore > playerScore){
-        return ` YOU LOST!!! Your score is ${playerScore} - Machine scored ${compScore }`
+        // return ` YOU LOST!!! Your score is ${playerScore} - Machine scored ${compScore }`
+        console.log(` YOU LOST!!! Your score is ${playerScore} - Machine scored ${compScore }`)
      }else if(compScore < playerScore){
-        return ` HURRAY!!! YOU WON!!! Your score is ${playerScore} - Machine scored ${compScore }`
-     }else return ` Oh WOW, ITS A DRAW : You scored ${playerScore} - Machine scored ${compScore }`
-     
-    //  return compScore + " : " + playerScore
+        // return ` HURRAY!!! YOU WON!!! Your score is ${playerScore} - Machine scored ${compScore }`
+        console.log(` HURRAY!!! YOU WON!!! Your score is ${playerScore} - Machine scored ${compScore }`)
+     }else 
+    // return ` Oh WOW, ITS A DRAW : You scored ${playerScore} - Machine scored ${compScore }`
+    console.log(` Oh WOW, ITS A DRAW : You scored ${playerScore} - Machine scored ${compScore }`)  
 }
-
-// console.log(game())
 game()
