@@ -122,4 +122,5 @@ function game(){
     //  return compScore + " : " + playerScore
 }
 
-console.log(game())
+// console.log(game())
+game()
