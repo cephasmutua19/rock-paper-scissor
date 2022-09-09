@@ -105,7 +105,8 @@ button{
     background-color: transparent;
     background-position: center;
     margin: 5px;
-    transition: transform 800ms ease-out;
+    transition-duration: 800ms;
+    transition-timing-function: ease-out;
     
 }
 
