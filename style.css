@@ -175,7 +175,7 @@ button{
     border-radius: 10px;
     text-transform: capitalize;
     color: aliceblue;
-    animation: pulse 5500ms ease-in-out 800ms infinite normal; 
+    animation: pulse 5500ms ease-in-out -800ms infinite reverse; 
     font-weight: 600;
     font-size: 1rem;
     letter-spacing: 1px;

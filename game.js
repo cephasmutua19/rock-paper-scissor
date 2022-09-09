@@ -28,13 +28,14 @@ function playGame(btn){
     playButton.addEventListener('click', (e) => {
         p.textContent = `!!Game On!!`;
         playButtonContainer.append(p);
+        setTimeout(() => {
+            p.classList.add('hide')
+            playersChoice.forEach(e => e.disabled = false);
+        }, 2000);
         
         let targetEl = e.target;
         targetEl.classList.add('hide');
-        setTimeout(() => {
-            playButtonContainer.removeChild(p);
-            playersChoice.forEach(e => e.disabled = false);
-        }, 2000);
+        
     });
 
     btn.addEventListener('click', (e) => {
@@ -77,8 +78,8 @@ function playGame(btn){
                         //End game
                                     if(scoreboard[0].innerText === '5' || scoreboard[1].innerText === '5'){
                                         playersChoice.forEach(e => e.disabled = true);
-                                        p.classList.add('score');
-                                        p.style.fontSize = "3em";
+                                        p.classList.remove('hide')
+                                        p.style.textAlign = 'center'
                                         if(compCount > playerCount){
                                             p.textContent = `You Loose!! Try Again`;
                                             playButtonContainer.append(p);
