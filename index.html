@@ -5,11 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor</title>
-    <link rel="icon" href="">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./images/cephdesignslogowhitesmoothed.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    
-    <script src="game.js"></script>
+    <div class="header">
+        <h1 id="headerA">rock</h1>
+        <h1 id="headerB">paper</h1>
+        <h1 id="headerC">scissor</h1>
+    </div>
+    <main>
+        <section class="score-board">
+            <p class="score" id="player-score">0</p>
+            <p class="score" id="machine-score">0</p>
+        </section>
+        <section class="play-button">
+            <button id="play-btn" class="">Play</button>
+        </section>
+        <section class="headers">
+            <h2 id="you">You</h2>
+            <h2 id="machine">Machine</h2>
+        </section>
+        <section class="button">
+            <div class="player-button">
+                <button id="rock" class="rock"></button>
+                <button id="paper" class="paper"></button>
+                <button id="scissor" class="scissor"></button>
+            </div>
+            <p class="vs">vs</p>
+            <div id="comp-button">
+                <button id="mark">?</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="game.js" type="text/javascript" defer></script>
 </body>
 </html>
