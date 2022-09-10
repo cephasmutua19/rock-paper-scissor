@@ -19,44 +19,6 @@ function getComputerChoice(){
     return spriteArr[Math.floor(Math.random() * 3)]
 };
 
-<<<<<<< HEAD
-function singlePlay(playerSelection, computerSelection){
-
-    let resultStr = ""
-    
-        let playerItem = "";
-        let reg = /rock|paper|scissor/i;
-    
-        if(reg.test(playerSelection)){
-            spriteArr.forEach(value => {
-                if(value.toLocaleLowerCase() === playerSelection.toLowerCase()){
-                    playerItem = value
-                }
-            })
-             
-        } 
-        
-    //Check if selections match
-    if(playerItem === computerSelection){
-        resultStr = "It's a DRAW!!!";
-    }else if(playerItem === spriteArr[0] && computerSelection === spriteArr[1]){
-        resultStr = `You Lose! ${computerSelection} beats ${playerItem}`
-    }
-    else if(playerItem === spriteArr[0] && computerSelection === spriteArr[2]){
-        resultStr = `You Win! ${playerItem} beats ${computerSelection}`
-    }
-    else if(playerItem === spriteArr[1] && computerSelection === spriteArr[0]){
-        resultStr = `You Win! ${playerItem} beats ${computerSelection}`
-    }else if(playerItem === spriteArr[1] && computerSelection === spriteArr[2]){
-        resultStr = `You Lose! ${computerSelection} beats ${playerItem}`
-    }else if(playerItem === spriteArr[2] && computerSelection === spriteArr[0]){
-        resultStr = `You Lose! ${computerSelection} beats ${playerItem}`
-    }else if(playerItem === spriteArr[2] && computerSelection === spriteArr[1]){
-        resultStr = `You Win! ${playerItem} beats ${computerSelection}`
-    }else{
-        resultStr = alert("Invalid Entry!!!. Next time enter either Rock, Paper or Scissor. RE-START THE GAME!!!")
-    }
-=======
 //Player Buttons
 playersChoice.forEach(e => e.disabled = true);
 
@@ -83,7 +45,6 @@ function playGame(btn){
             }
             return chosenMove;
         });
->>>>>>> rps-ui
 
             setTimeout(() => {
                 playersChoice.forEach(val => {
@@ -147,46 +108,8 @@ function playGame(btn){
 
 playersChoice.forEach(playGame);
 
-<<<<<<< HEAD
-//Create a 5 round iteration that displays winner and looser at the end with points
-=======
-
->>>>>>> rps-ui
 
 
 
-<<<<<<< HEAD
-        if(result[i] === undefined){
-            console.error("Sorry, Invalid Entry!!!");
-            
-            return;
-        }else if(/^You\sLose/.test(result[i])){
-            console.log(result[i])
-            console.log(`Comp - ${++compScore}`)
-            console.log(`Me - ${playerScore += 0}`)
-        }else if(/^It\'s\sa\s/.test(result[i])){
-            console.log(result[i])
-            console.log(`Comp - ${compScore += 0}`)
-            console.log(`Me - ${playerScore += 0}`)
-        }else{
-            console.log(result[i])
-            console.log(`Comp - ${compScore += 0}`)
-            console.log(`Me - ${++playerScore}`)
-        }
-     }
-
-     if(compScore > playerScore){
-        // return ` YOU LOST!!! Your score is ${playerScore} - Machine scored ${compScore }`
-        console.log(` YOU LOST!!! Your score is ${playerScore} - Machine scored ${compScore }`)
-     }else if(compScore < playerScore){
-        // return ` HURRAY!!! YOU WON!!! Your score is ${playerScore} - Machine scored ${compScore }`
-        console.log(` HURRAY!!! YOU WON!!! Your score is ${playerScore} - Machine scored ${compScore }`)
-     }else 
-    // return ` Oh WOW, ITS A DRAW : You scored ${playerScore} - Machine scored ${compScore }`
-    console.log(` Oh WOW, ITS A DRAW : You scored ${playerScore} - Machine scored ${compScore }`)  
-}
-game()
-=======
 
 
->>>>>>> rps-ui
