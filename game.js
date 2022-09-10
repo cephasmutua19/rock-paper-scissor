@@ -9,8 +9,6 @@ let p = document.createElement('p');
 p.classList.add('score');
 p.style.fontSize = "3em";
 
-// console.log(scoreboard[0])
-
 let playerCount = 0;
 let compCount = 0;
 
